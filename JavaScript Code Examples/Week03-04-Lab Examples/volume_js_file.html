@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<!-- Week03-04: volume.html-->
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Calculating Sphere Volume</title>
+    <script>
+        function start()
+        {
+            var button = document.getElementById("calculateButton");
+            button.addEventListener("click", displayVoulme, false); // added a event listener
+        } // end function start
+            
+        function displayVoulme()
+            {
+            var inputField = document.getElementById("radiusField");
+            var radius = parseFloat(inputField.value);
+            var result = document.getElementById("result");
+            result.innerHTML = "Sphere volume is: " + sphereVolume(radius);
+        } // end display volume
+
+        function sphereVolume(radius)
+        {
+            return (4.0 / 3.0) * Math.PI * Math.pow(radius, 3);
+        } // end function sphereVolume
+
+        window.addEventListener("load", start, false);
+    </script>
+</head>
+<body>
+
+    <form action="#">
+        <p><label>Radius:</label>
+           <input id="radiusField" type="number" />
+            <input id="calculateButton" type="button" value="Calculate" />
+        </p>
+    </form>
+    <!--<p id="result"></p>-->
+    <div id="result"></div>
+</body>
+</html>
